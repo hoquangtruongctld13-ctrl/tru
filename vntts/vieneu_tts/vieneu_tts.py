@@ -4,7 +4,7 @@ import librosa
 import numpy as np
 import torch
 from neucodec import NeuCodec, DistillNeuCodec
-from utils.phonemize_text import phonemize_with_dict
+from ..utils.phonemize_text import phonemize_with_dict
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 import re
