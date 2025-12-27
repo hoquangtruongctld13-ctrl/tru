@@ -55,6 +55,10 @@ voice_samples:
     audio: ./sample/Ngọc (nữ miền Bắc).wav
     text: ./sample/Ngọc (nữ miền Bắc).txt
     codes: ./sample/Ngọc (nữ miền Bắc).pt
+  "Hương (nữ miền Bắc)":
+    audio: ./sample/Hương (nữ miền Bắc).wav
+    text: ./sample/Hương (nữ miền Bắc).txt
+    codes: ./sample/Hương (nữ miền Bắc).pt
   "Ly (nữ miền Bắc)":
     audio: ./sample/Ly (nữ miền Bắc).wav
     text: ./sample/Ly (nữ miền Bắc).txt

@@ -4,7 +4,7 @@ import platform
 import glob
 from phonemizer import phonemize
 from phonemizer.backend.espeak.espeak import EspeakWrapper
-from utils.normalize_text import VietnameseTTSNormalizer
+from .normalize_text import VietnameseTTSNormalizer
 
 # Configuration
 PHONEME_DICT_PATH = os.getenv(
@@ -70,8 +70,7 @@ def _setup_linux_espeak():
         "eSpeak NG library not found. Install with:\n"
         "  Ubuntu/Debian: sudo apt-get install espeak-ng\n"
         "  Fedora: sudo dnf install espeak-ng\n"
-        "  Arch: sudo pacman -S espeak-ng\n"
-        "See: https://github.com/pnnbao97/VieNeu-TTS/issues/5"
+        "  Arch: sudo pacman -S espeak-ng"
     )
 
 def _setup_macos_espeak():

@@ -13,31 +13,27 @@ name = "pytorch"
 url = "https://download.pytorch.org/whl/cu128"
 
 [project]
-name = "VieNeu-TTS"
+name = "VN-TTS-Studio"
 version = "0.1.0"
-description = "Advanced on-device Vietnamese TTS with instant voice cloning"
-readme = "README.md"
+description = "Vietnamese TTS Studio Application"
 requires-python = "==3.12.*"
 dependencies = [
+    "customtkinter>=5.2.0",
+    "requests>=2.31.0",
+    "python-docx>=0.8.11",
+    "google-genai>=0.3.0",
+    "pyaudio>=0.2.13",
+    # VN TTS dependencies (heavy - copy to build folder)
     "phonemizer>=3.3.0",
     "torch",
     "torchvision",
     "torchaudio",
     "neucodec>=0.0.4",
     "librosa>=0.11.0",
-    "gradio>=5.49.1",
     "onnxruntime>=1.23.2",
-    "datasets>=3.2.0",
-    "lmdeploy",
-    "triton-windows; sys_platform == 'win32'",
-    "triton; sys_platform != 'win32'",
 ]
 
 [tool.uv.sources]
 torch = { index = "pytorch" }
 torchvision = { index = "pytorch" }
 torchaudio = { index = "pytorch" }
-lmdeploy = [
-    { url = "https://github.com/InternLM/lmdeploy/releases/download/v0.11.0/lmdeploy-0.11.0+cu128-cp312-cp312-win_amd64.whl", marker = "sys_platform == 'win32' and python_version == '3.12'" },
-    { url = "https://github.com/InternLM/lmdeploy/releases/download/v0.11.0/lmdeploy-0.11.0+cu128-cp312-cp312-manylinux2014_x86_64.whl", marker = "sys_platform == 'linux' and python_version == '3.12'" },
-]
