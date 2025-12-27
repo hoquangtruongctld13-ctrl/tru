@@ -1,0 +1,45 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+.env/
+avcodec-58.dll
+avdevice-58.dll
+avfilter-7.dll
+avformat-58.dll
+avutil-56.dll
+postproc-55.dll
+swresample-3.dll
+swscale-5.dll
+ffmpeg.exe
+ffplay.exe
+ffprobe.exe
+
+# IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build artifacts
+build/
+dist/
+TTS AUIDO/
+*.egg-info/
+
+# Temporary files
+_temp_*.mp3
+_temp_*.wav
+*.tmp
+
+# Settings (optional - remove if you want to track settings)
+# settings.json
+
+# OS files
+.DS_Store
+Thumbs.db
