@@ -22,10 +22,36 @@ import sys
 import concurrent.futures
 from urllib.parse import quote
 
-# Add edge module path
-_edge_module_path = os.path.dirname(os.path.abspath(__file__))
-if _edge_module_path not in sys.path:
-    sys.path.insert(0, _edge_module_path)
+# =============================================================================
+# PATH SETUP - Add module paths for PyInstaller build
+# =============================================================================
+
+def _setup_paths():
+    """Setup sys.path for both development and PyInstaller builds"""
+    if getattr(sys, 'frozen', False):
+        # Running as PyInstaller bundle
+        app_dir = os.path.dirname(sys.executable)
+        
+        # Add _libs folder for heavy libraries
+        libs_dir = os.path.join(app_dir, '_libs')
+        if os.path.exists(libs_dir) and libs_dir not in sys.path:
+            sys.path.insert(0, libs_dir)
+    else:
+        # Running as script
+        app_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Add module paths
+    if app_dir not in sys.path:
+        sys.path.insert(0, app_dir)
+    
+    # Add vntts paths for VN TTS imports
+    vntts_dir = os.path.join(app_dir, 'vntts')
+    if os.path.exists(vntts_dir) and vntts_dir not in sys.path:
+        sys.path.insert(0, vntts_dir)
+    
+    return app_dir
+
+_APP_DIR = _setup_paths()
 
 # Import authentication module
 from auth_module import AuthManager, require_login
@@ -228,7 +254,7 @@ EDGE_TTS_GENDERS = ["Tất cả", "Male", "Female"]
 # =============================================================================
 
 # VN TTS directory path (relative to main.py)
-VIENEU_TTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "VieNeu-TTS")
+VIENEU_TTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "vntts")
 
 # Model backbone configurations
 VIENEU_BACKBONE_CONFIGS = {

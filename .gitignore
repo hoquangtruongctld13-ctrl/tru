@@ -8,6 +8,9 @@ __pycache__/
 venv/
 env/
 .env/
+.venv/
+
+# FFmpeg binaries (download separately)
 avcodec-58.dll
 avdevice-58.dll
 avfilter-7.dll
@@ -29,16 +32,22 @@ ffprobe.exe
 # Build artifacts
 build/
 dist/
-TTS AUIDO/
 *.egg-info/
+*.spec.bak
 
 # Temporary files
 _temp_*.mp3
 _temp_*.wav
 *.tmp
+TTS AUIDO/
 
-# Settings (optional - remove if you want to track settings)
-# settings.json
+# User settings (generated at runtime)
+credentials.json
+settings.json
+gemini_live_settings.json
+
+# UV lock files (regenerate with uv sync)
+uv.lock
 
 # OS files
 .DS_Store

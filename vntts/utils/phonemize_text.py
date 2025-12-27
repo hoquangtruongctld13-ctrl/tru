@@ -70,8 +70,7 @@ def _setup_linux_espeak():
         "eSpeak NG library not found. Install with:\n"
         "  Ubuntu/Debian: sudo apt-get install espeak-ng\n"
         "  Fedora: sudo dnf install espeak-ng\n"
-        "  Arch: sudo pacman -S espeak-ng\n"
-        "See: https://github.com/pnnbao97/VieNeu-TTS/issues/5"
+        "  Arch: sudo pacman -S espeak-ng"
     )
 
 def _setup_macos_espeak():

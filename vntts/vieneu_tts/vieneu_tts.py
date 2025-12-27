@@ -27,10 +27,7 @@ HƯỚNG DẪN CÀI ĐẶT llama-cpp-python:
    pip install llama-cpp-python --force-reinstall
 
 🔹 NẾU VẪN LỖI - Cài từ wheel có sẵn (khuyến nghị):
-   pip install llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
-
-📖 Chi tiết tại: https://github.com/pnnbao97/VieNeu-TTS
-   hoặc xem file VIENEU_TTS_GUIDE_VI.md"""
+   pip install llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu"""
 
 # ============================================================================
 # Shared Utilities
@@ -536,7 +533,7 @@ class FastVieNeuTTS:
         except ImportError as e:
             raise ImportError(
                 "Failed to import `lmdeploy`. "
-                "Xem hướng dẫn cài đặt lmdeploy để tối ưu hiệu suất GPU tại: https://github.com/pnnbao97/VieNeu-TTS"
+                "Vui lòng cài đặt lmdeploy để tối ưu hiệu suất GPU."
             ) from e
         
         backend_config = TurbomindEngineConfig(
